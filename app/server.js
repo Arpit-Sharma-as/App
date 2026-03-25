@@ -1,8 +1,17 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("🚀 DevOps CI/CD Project by Arpit");
+const VERSION = "v1.0.0"; // we will change this later
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/api", (req, res) => {
+  res.json({
+    message: "🔥 Backend is working perfectly!",
+    version: VERSION
+  });
 });
 
 app.listen(3000, () => {
