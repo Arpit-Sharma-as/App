@@ -20,7 +20,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd devops-project || git clone git@github.com:Arpit-Sharma-as/App.git
+            cd devops-project || git clone https://github.com/Arpit-Sharma-as/App.git
             cd devops-project
             git pull
 
