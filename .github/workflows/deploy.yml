@@ -32,7 +32,7 @@ jobs:
             git pull
 
             echo "🔨 Building new image..."
-            docker build -t node-app:new .
+            docker build -t node-app:new -f docker/Dockerfile .
 
             echo "🚀 Running NEW container on temp port..."
             docker run -d -p 3001:3000 --name node-app-new node-app:new
